@@ -1,0 +1,14 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int k = 2;
+        for(int i = 2; i< nums.length; i++){
+            if(nums[i] != nums[k-2]){
+                nums[k] = nums[i];
+                k++;
+            }
+        }
+        return k;
+    }
+}   
+
+// using two pointers traverse the array and as first two element we dont need to change wee can start from index 2.
