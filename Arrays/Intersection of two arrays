@@ -1,0 +1,26 @@
+// by using hashset we can store element of first array in it and then create another hashset to store the element of 2nd array that are present in in 1st array.
+//Then convert set into array and return it.
+
+class Solution {
+    public int[] intersection(int[] nums1, int[] nums2) {
+        HashSet<Integer> set = new HashSet<>();
+        for( int num : nums1){
+            set.add(num);
+        }
+
+        HashSet <Integer> result = new HashSet<>();
+            for(int num : nums2){
+                if(set.contains(num)){
+                    result.add(num);
+                }
+            }
+        
+        int [] arr = new int[result.size()];
+        int i =0;
+        for(int num : result){
+            arr[i++] = num;
+        }
+
+        return arr;
+    }
+}
