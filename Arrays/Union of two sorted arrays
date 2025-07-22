@@ -1,0 +1,24 @@
+class Solution {
+    public int[] unionArray(int[] nums1, int[] nums2) {
+
+        HashSet <Integer> set = new HashSet<> ();
+
+        for(int num : nums1){
+            set.add(num);
+        }
+
+        for(int num : nums2){
+            set.add(num);
+        }
+
+        int [] union = new int[set.size()]; 
+        int i =0;
+        for(int num : set){
+            union[i++] = num;
+        }
+
+        return union;
+    }   
+} 
+
+//  using hashset we dot need to check for double occurence of a number in list 
