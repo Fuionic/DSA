@@ -1,0 +1,20 @@
+// we use two pointers approach and by traverisng the array we check for our confition. first we only checkl for elements rathera than zero
+as only those elementts are required. WE need to find the zeroes between them.
+
+class Solution {
+    public int captureForts(int[] forts) {
+
+        int max= 0; 
+        int prev = -1;
+        for(int  i = 0; i<forts.length; i++){
+            if(  forts[i] != 0){
+                if(prev != -1 && forts[i] != forts[prev] ){
+                    max = Math.max(max , i - prev - 1);
+                } 
+                prev = i;
+            }
+        }
+
+        return max;
+    }
+}
