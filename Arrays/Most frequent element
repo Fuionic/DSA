@@ -1,0 +1,27 @@
+// As we want to maintain the count of even element we use hashmap to maintaon the count. them we check the conditon
+for even number and maintan count of thosse number in map. We then calculate the higheest frequency element and return it.
+
+class Solution {
+    public int mostFrequentEven(int[] nums) {
+        HashMap <Integer, Integer> map = new HashMap <> ();
+
+        for(int num : nums){
+            if(num % 2 == 0){ 
+                map.put(num , map.getOrDefault(num , 0) +1);
+            }
+        }
+
+        int max = 0;
+        int freq =-1;
+        for(Map.Entry<Integer , Integer> entry : map.entrySet()){
+            int key = entry.getKey();
+            int value = entry.getValue(); 
+
+            if(value > max || (value == max && key < freq)){
+                max = value;
+                freq = key;
+            }
+        }
+        return freq;
+    }
+}
