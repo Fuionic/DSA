@@ -1,0 +1,18 @@
+// the string may contain the spces at first and last so what we use trim to delete trailing spaces and then 
+traverse from back of the string and as we find character we increment the count;
+
+class Solution {
+    public int lengthOfLastWord(String s) {
+        String k = s.trim();
+        int n = k.length();
+        int length = 0;
+        
+        for(int i =  n-1; i >= 0; i--){
+            if(k.charAt(i) == ' '){
+                break;
+            }
+            length++;
+        }
+        return length;                                                           
+    }
+}
