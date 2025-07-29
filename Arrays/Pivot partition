@@ -1,0 +1,33 @@
+// maintain three list and for smaller, larger, equal and then  combine them to get resultant array
+
+
+class Solution {
+    public int[] pivotArray(int[] nums, int pivot) {
+        List<Integer> smaller = new ArrayList<>();
+        List<Integer> equal = new ArrayList<>();
+        List<Integer> larger = new ArrayList<>();
+
+        for(int i =0; i<nums.length; i++){
+            if(nums[i] < pivot){
+                smaller.add(nums[i]);
+            }else if(nums[i] == pivot){
+                equal.add(nums[i]);
+            }
+            else{
+                larger.add(nums[i]); 
+            }
+        }
+
+        List<Integer> combinedList = new ArrayList<>(); 
+        combinedList.addAll(smaller);
+        combinedList.addAll(equal);
+        combinedList.addAll(larger);
+
+        int[] result = new int[combinedList.size()];
+        for(int i =0; i<combinedList.size(); i++){
+            result[i] = combinedList.get(i);
+
+        }
+        return result;
+    }
+}
