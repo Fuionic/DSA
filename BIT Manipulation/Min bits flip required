@@ -1,0 +1,8 @@
+// by doihng the xor of number and the target we get the number whos set bit is count of flip required to convert the given number to target. 
+
+class Solution {
+    public int minBitFlips(int start, int goal) {
+        int res = start ^ goal;
+        return Integer.bitCount(res);
+    }
+}
